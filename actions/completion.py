@@ -36,7 +36,7 @@ class CompletionAction(Action):
         response = openai.Completion.create(
             model=model,
             prompt=prompt,
-            max_tokens=max_tokens,
+            max_tokens=int(max_tokens),
             temperature=temperature,
             top_p=top_p,
             frequency_penalty=frequency_penalty,
