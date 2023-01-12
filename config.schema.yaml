@@ -1,0 +1,8 @@
+---
+api_key:
+  type: string
+  description: "Open API api key"
+  # add a key to the datastore called 'openapi_apikey'
+  # More info: https://docs.stackstorm.com/datastore.html#storing-secrets
+  default: "{{ st2kv.system.openapi_apikey | decrypt_kv }}"
+  secret: true

@@ -1,0 +1,42 @@
+import sys
+import json
+
+from st2common.runners.base_action import Action
+from st2client.client import Client
+from st2client.models import KeyValuePair
+
+import openai
+
+
+class CompletionAction(Action):
+    def __init__(self, config):
+        super(CompletionAction, self).__init__(config=config)
+        # self.api_key = self.client.keys.get_by_name(name='openapi_apikey', decrypt=True)
+        self.api_key = self.config.get("api_key", None)
+        self.client = Client(base_url="http://localhost")
+
+        openai.api_key = self.api_key
+
+    def run(
+        self,
+        prompt,
+        model,
+        max_tokens,
+        temperature,
+        top_p,
+        stream,
+        frequency_penalty,
+        presence_penalty,
+        stop,
+    ):
+        response = openai.Completion.create(
+            model="code-davinci-002",
+            prompt=prompt,
+            max_tokens=max_tokens,
+            temperature=temperature,
+            top_p=top_p,
+            frequency_penalty=frequency_penalty,
+            presence_penalty=presence_penalty,
+            stop=stop,
+        )
+        return {"response": response}

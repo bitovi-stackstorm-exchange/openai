@@ -1,0 +1,31 @@
+---
+name: test
+description: Run a test
+runner_type: "python-script"
+entry_point: test.py
+enabled: true
+parameters:
+  prompt:
+    required: true
+    type: string
+    default: "Tell a devops joke"
+  model:
+    required: true
+    type: string
+    default: "code-davinci-002"
+  max_tokens:
+    required: true
+    type: number
+    default: 256
+  temperature:
+    required: true
+    type: number
+    default: 0.9
+  top_p:
+    required: true
+    type: number
+    default: 1
+  stop:
+    required: true
+    type: array
+    default: ["\n", " Human:", " AI:"]
