@@ -24,13 +24,12 @@ class CompletionAction(Action):
         max_tokens,
         temperature,
         top_p,
-        stream,
         frequency_penalty,
         presence_penalty,
         stop,
     ):
         response = openai.Completion.create(
-            model="code-davinci-002",
+            model=model,
             prompt=prompt,
             max_tokens=max_tokens,
             temperature=temperature,
