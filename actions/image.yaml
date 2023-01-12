@@ -1,0 +1,17 @@
+---
+name: image
+description: OpenAI Image Request
+runner_type: "python-script"
+entry_point: image.py
+enabled: true
+parameters:
+  prompt:
+    required: true
+    type: string
+    default: "A devops mascot"
+  n:
+    type: number
+    default: 2
+  size:
+    type: string
+    default: "512x512"
