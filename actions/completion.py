@@ -11,8 +11,8 @@ import openai
 class CompletionAction(Action):
     def __init__(self, config):
         super(CompletionAction, self).__init__(config=config)
-        # self.api_key = self.client.keys.get_by_name(name='openapi_apikey', decrypt=True)
-        self.api_key = self.config.get("api_key", None)
+        self.api_key = self.client.keys.get_by_name(name="openapi_apikey", decrypt=True)
+        # self.api_key = self.config.get("api_key", None)
         self.client = Client(base_url="http://localhost")
 
         openai.api_key = self.api_key
