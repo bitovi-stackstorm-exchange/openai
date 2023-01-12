@@ -17,6 +17,8 @@ class CompletionAction(Action):
         # self.api_key = self.config.get("api_key", None)
 
         openai.api_key = self.api_key
+        print("api key:")
+        print(self.api_key[:10])
 
     def run(
         self,
