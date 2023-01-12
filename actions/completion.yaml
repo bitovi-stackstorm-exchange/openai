@@ -1,8 +1,8 @@
 ---
-name: test
-description: Run a test
+name: completion
+description: OpenAI Completion Request
 runner_type: "python-script"
-entry_point: test.py
+entry_point: completion.py
 enabled: true
 parameters:
   prompt:
