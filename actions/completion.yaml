@@ -17,7 +17,7 @@ parameters:
     default: 256
   temperature:
     type: number
-    default: 0.9
+    default: 0.6
   top_p:
     type: number
     default: 1
@@ -29,5 +29,5 @@ parameters:
     default: 0
   stop:
     type: array
-    default: ["\n", " Human:", " AI:"]
+    default: []
 
