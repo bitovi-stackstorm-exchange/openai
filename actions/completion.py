@@ -14,7 +14,7 @@ class CompletionAction(Action):
         self.client = Client(base_url="http://localhost")
 
         self.api_key = self.client.keys.get_by_name(
-            name="openapi_apikey", decrypt=True
+            name="openai_apikey", decrypt=True
         ).value
         # self.api_key = self.config.get("api_key", None)
 
